@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "password") {
+        window.location.href = "recipeblog.html"; // Redirect to the desired page after successful login
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 class="loginheader">
+    <img src="media/kapfp.jpg" class="logo" alt="pfp">
+    <img src="media/font.png" class="font" alt="font">
+  </h1>
+  <form onsubmit="validateForm(event)">
+    <div class="loginForm">
+      <label for="username" class="login">Username</label><br>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password" class="login">Password</label><br>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" class="loginbtn" value="Log in">
+    </div>
+  </form>
+</body>
+</html>
+
